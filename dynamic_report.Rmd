@@ -1,0 +1,104 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE }
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+#packages
+library(magick)
+library(tidyverse)
+
+```
+
+```{css}
+
+body {
+  background-color: grey;
+  padding: 40px;
+}
+
+p {
+  color: black;
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+  
+}
+
+h2 {
+  color: black;
+  font-weight: bold;
+}
+  
+```
+
+## Dynamic Tracking of Shoe Characteristics
+
+This dynamic report intends to analyse the characteristics of different shoes I saw. The nature of my data is observational. During the observation period, every time I left my house, I would note down 3 characteristics about the first pair of shoes other I saw someone wearing. Two of these are categorical variables; the shoe brand and what type of shoe it was. The other variable was numeric, which was how many colours were on the shoe.
+
+
+```{r fig.width = 8, fig.height = 4}
+
+#graphs
+
+csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vS0Lz3R3oVtqlawNFPUTUTQ4M9m5sIJb8R1DcLSCcnrqQ8c7veAXuh5dwuK--AoM3NEwv9XcefPlb3B/pub?output=csv"
+
+logged_data <- read_csv(csv_file)
+
+latest_data <- logged_data %>%
+  rename(shoe_brand = 2,
+         shoe_colours = 3,
+         shoe_type = 4)
+
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(y = shoe_brand, fill = shoe_type)) +
+  labs (title = "Graphing the sole trend",
+        subtitle = "Comparing different amounts of shoe brands observed daily",
+        caption = "Source: Google Forms",
+        x = "Frequency Observed",
+        y = "Shoe Brand")
+
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(y = shoe_colours, fill = shoe_brand)) +
+  labs (title = "Tracking shoe hues",
+        subtitle = "Comparing different amounts of colours on shoes observed daily",
+        caption = "Source: Google Forms",
+        x = "Frequency Observed",
+        y = "Colours per Shoe")
+
+
+#dynamic comments
+
+#comment 1
+shoe_colour_observations <- length(latest_data$shoe_colours)
+
+mean_colour_count <- mean(latest_data$shoe_colours)
+
+paste0("The mean number of colours per shoe reported by the ", shoe_colour_observations, " observations in the Google Form was ", mean_colour_count, ".")
+
+
+#comment 2
+shoe_colour_observations2 <- length(latest_data$shoe_colours)
+
+max_colour_count <- max(latest_data$shoe_colours)
+
+paste0("The maximum number of colours reported in a shoe by the ", shoe_colour_observations, " observations in the Google Form was ", max_colour_count, ".")
+
+
+#comment 3
+shoe_colour_observations3 <- length(latest_data$shoe_colours)
+
+min_colour_count <- min(latest_data$shoe_colours)
+
+paste0("The minimum number of colours reported in a shoe by the ", shoe_colour_observations, " observations in the Google Form was ", min_colour_count, ".")
+```
+```{r}
+
+
+
