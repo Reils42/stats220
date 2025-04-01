@@ -1,0 +1,78 @@
+---
+title: "Project 2"
+subtitle: "STATS 220 Semester One 2025"
+author: "Reily Sievers"
+output:
+  html_document:
+    code_folding: hide
+  
+---
+
+```{r setup, include=FALSE }
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+#packages
+library(magick)
+library(tidyverse)
+
+```
+
+```{css}
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+p {
+  font-family: "Varela Round";
+  color: black;
+}
+
+body {
+  background-color: turquoise;
+  padding: 40px;
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+  font-family: "Varela Round";
+}
+
+h2 {
+  color: black;
+  font-weight: bold;
+  font-family: "Varela Round";
+}
+  
+```
+
+## Introduction
+
+The focus of my data collection was observing shoe characteristics. Whenever I left my house at any time for any period throughout the observation period, I would record 3 variables based on the appearance of the first pair of shoes I saw someone wearing.These variables were the shoe's brand and type (categorical) as well as the number of different colors on the shoe (numeric). Because I often leave home multiple times a day, I was able to record multiple entries for each day.
+
+An important guideline for survey creation is ensuring the purpose for the study is communicated. This involves writing a clear and comprehensive introduction that includes what data is being collected and why, as well as who will have access and what information will be recorded and saved. I provide answers to all of these, explaining that the survey is collecting data based on observations of peoples shoes, and that it is being conducted for a University assignment. I go on to clarify that University of Auckland staff (the Statistics Faculty) will have access, but no personal information will be collected. 
+
+Analysing the data I've collected will provide me valuable insights I can use to learn things. For instance, because I recorded the first pair of shoes I saw after leaving my house, the shoes are mostly from people wearing them in my local area. Analyzing the variables would allow me to learn shoe trends and demographics in my neighborhood. Additionally, because I can learn trends on a wider scale with any combination of my variables. For example, unbranded shows typically had fewer colors compared to branded shoes as demonstrated by my one of my bar graphs. From this I could infer unbranded shoes are typically less colorful. 
+
+[Form Response Link](https://docs.google.com/forms/d/e/1FAIpQLSehRwLriOJTBBBV-4WvEe-ot2heB3IevPyUdCpNC-y1hHqpuw/viewform)
+
+## Dynamic Report
+
+[Github Report](https://reils42.github.io/stats220/)
+
+## Creativity
+
+This project demonstrates lots of creativity namely in the focus of the data. When searching for a topic, I wanted to challenge myself and come up with an idea that wasn't related to the examples provided in the assignment instructions. I drafted ideas for a while and settled on observing peoples shoes.I think this is quite quirky and niche but still fulfills the project requirement of being observational in nature. Additionally, I think my dynamic report is insightful and informative. The variables cover a lot about the qualities of shoes, and a lot of correlations can be drawn by directly comparing the variables together. 
+
+## Learning Reflection
+
+An important idea I've learnt while creating web-based dynamic reporting systems is the importance of data collection design. In order to extract necessary data, survey questions (or whatever method is being used) must be designed in a way that is relevant and useful to your goal. The questions must also be communicated clearly so that the respondent answers in the way you want them to. Not performing these steps correctly can be disastrous when you prepare to present your data and accompanying analysis. I recognized this while designing my form, and proceeded to reword and re-design questions so that they better captured the data I wanted. Additionally, another crucial concept I realized throughout this module is the importance of data presentation design. Collecting data is only the first step, next it must be communicated in an insightful and informative way. Data must be organised neatly in tables and graphs, and supporting captions that contextualize it must also  be included. This will ensure audiences understand the data and what it actually means. I recognized this many times while completing my project, and proceeded to reword my graph titles and axis's to better portray my data.
+
+
+
+## Appendix
+```{r file='exploration.R', eval=FALSE, echo=TRUE}
+
+```
+```{r file='dynamic_report.Rmd', eval=FALSE, echo=TRUE}
+
+```
