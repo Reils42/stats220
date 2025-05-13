@@ -1,0 +1,126 @@
+---
+title: "What Shoes are People Wearing and how/when do I Notice?"
+author: "Reily Sievers"
+output: html_document
+---
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+
+#packages
+library(tidyverse)
+```
+
+```{js}
+$(function() {
+  $(".level2").css('visibility', 'hidden');
+  $(".level2").first().css('visibility', 'visible');
+  $(".container-fluid").height($(".container-fluid").height() + 300);
+  $(window).on('scroll', function() {
+    $('h2').each(function() {
+      var h2Top = $(this).offset().top - $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (h2Top >= 0 && h2Top <= windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'visible');
+      } else if (h2Top > windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'hidden');
+      }
+    });
+  });
+})
+```
+
+```{css}
+.figcaption {display: none}
+
+body {
+  background-color: #7fcdbb;
+  padding: 40px;
+}
+
+p {
+  color: #081d58 ;
+}
+
+h1 {
+   color: #081d58;
+   font-weight: bold;
+}
+
+h2 {
+  color: #dd1c77;
+  font-weight: bold;
+}
+```
+
+
+## My Data Story
+
+My data story is focused on people's shoes. It explores peoples preference for footwear and how they express it. As well as how and when I notice these preferences.The collection of data for this story is observational by nature. During the first observation period for project 2, whenever I left my house I recorded 3 variables based on the appearance of the first pair of shoes I saw someone wearing. These were shoe brand, shoe type, and the amount of colors on the shoe. Because I come back to and leave my home multiple times I day I was permitted to collect several entries a day. During the second observation period for this project, I repeated the same process but added 2 new variables: shoe age and shoe size. 
+
+
+## Chapter 1: Is colour fashionable or casual?
+
+
+[](colourful_shoes.png)
+
+
+
+![Scatter plot with averages showing the amount of colours on fashionable vs casual shoes](my_plot_1.png)
+
+
+The first part of my story is focused on how colorful people like their shoes to be. When making observations I recorded the number of different colors on peoples shoes. I manipulated shoes into 2 broad categories: casual and fashionable. 
+
+From the above visualization, we can see the distribution of color amounts for fashionable shoes is small and narrow. It has a small average of 1.2 colors. On the other hand, the distribution for casual shoes is much bigger and wider. The average is more than double fashionable shoes, at 3 colors. 
+
+This chapter tells us that people will buy more colorful casual shoes, and prefer fashionable ones to be more bland. Also, casual shoes may in general just be more colorful compared to  fashionable ones.
+
+
+
+## Chapter 2: How mainstream is mainstream?
+
+
+
+![Bar chart showing the number of observations of different classes of shoe popularity](my_plot_2.png)
+
+
+
+The second part of my story focuses on how much people embrace mainstream and well known shoe brands. When making observations I recorded the shoe brand. I then manipulated these brands into 3 groups: Mainstream, well known and Uncommon/Unbranded. 
+
+From the above visualization, we can see that unbranded/uncommon shoe brands were the most commonly observed. Mainstream shoe brands are not far behind. The lesser but still well known brands were observed around half as many times as unbranded/uncommon brands. 
+
+This chapter tells us that lots of people buy and embrace the culture of mainstream and well known shoe brands. However, many are also happy to buy from less known brands or not even represent a brand at all. 
+
+
+## Chapter 3: When am I taking notes?
+
+
+
+![Density plot showing frequencies of when data was first collected fot the day, vs when last collected for the day](my_plot_3.png)
+
+
+
+The third and final part of my story is about when I as the storyteller notice these things about peoples shoes. Throughout the observations periods, whenever I collected data I also recorded when the observations were made. I manipulated these into date-time variables, including when my first data collection occurred for a day, and when my final data collection occurred for a day.
+
+From the above visualization, we can see that the distribution for my first data collection for the day is narrow, typically occurring around 8 or 9 am then drastically falling off. The distribution for my final collection is much more varied. We can see it peaks around 7 or 8 pm, but also also commonly occurred from 4p onwards. 
+
+This chapter tells us that I was observing people's shoes all throughout the day. I start in the early morning and finished late at night. This chapter also tell us my daily observations resemble a typical work day (maybe slightly longer), by clocking in and out with my first and last observations. 
+
+
+## Conclusion
+
+To conclude, this is a story all about how people express their shoe preferences and how/when I pick these up. We have learnt that casual is for expressing color, while fashion is less striking. We also saw how while lots of people like to embrace mainstream shoe brands, just as many aren't afraid to go against shoe culture and rock lesser known brands, or even entirely unbranded shoes. Finally, we saw how I was tracking these characteristics all throughout the day, starting early and finishing late.
+
+
+
+
+
+
+
+
+
+
